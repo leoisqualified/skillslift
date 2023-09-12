@@ -1,0 +1,38 @@
+{%load static%}
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skillslift</title>
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="facebook-page flex">
+        <div class="text">
+          <h1>skillslift</h1>
+          <p>Explore </p>
+          <p> what you're good at</p>
+        </div>
+        <form method='POST'>
+          {%csrf_token%}
+          <input type="text" placeholder="email" name="username" required>
+          <input type="password" placeholder="Password" name="password" required>
+          <div class="link">
+            <button type="submit" class="login">Login</button>
+              {%for message in messages%}
+                <p>{{message}}<p>
+              {%endfor%}
+            <a href="#" class="forgot">Forgot password?</a>
+          </div>
+          <hr>
+          <div class="button">
+            <a href="{%url 'signup'%}">Create new account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

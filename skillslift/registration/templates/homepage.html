@@ -1,0 +1,23 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skillslift</title>
+  <link rel="stylesheet" type="text/css" href="{%static 'homepage.css'%}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navdiv">
+      <div class="logo"><a href="#">Skillslift</a> </div>
+      <ul>
+        <li>Hello, {{request.user}}</li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <button><a href="{%url 'logout'%}">Logout</a></button>
+      </ul>
+    </div>
+  </nav>
+</body>
+</html>
